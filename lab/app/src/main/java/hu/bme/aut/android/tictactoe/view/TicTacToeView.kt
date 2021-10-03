@@ -1,12 +1,15 @@
 package hu.bme.aut.android.tictactoe.view
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import hu.bme.aut.android.tictactoe.GameActivity
+import androidx.core.content.ContextCompat.startActivity
 import hu.bme.aut.android.tictactoe.model.TicTacToeModel
 import kotlin.math.min
 
@@ -14,6 +17,7 @@ class TicTacToeView : View {
 
     private val paintBg = Paint()
     private val paintLine = Paint()
+    private val gameActivity: GameActivity = this.context as GameActivity
 
     constructor(context: Context?) : super(context)
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs)
@@ -105,6 +109,10 @@ class TicTacToeView : View {
                 if (tX < 3 && tY < 3 && TicTacToeModel.getFieldContent(tX, tY) == TicTacToeModel.EMPTY) {
                     TicTacToeModel.setFieldContent(tX, tY, TicTacToeModel.nextPlayer)
                     invalidate()
+                    if (TicTacToeModel.checkEnd()){
+                        gameActivity.endGame(TicTacToeModel.getWinner())
+                        gameActivity.finish()
+                    }
                 }
                 return true
             }

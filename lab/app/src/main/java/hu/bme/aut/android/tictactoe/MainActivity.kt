@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, GameActivity::class.java))
         }
 
-
         binding.btnAbout.setOnClickListener {
             startActivity(Intent(this, AboutActivity::class.java))
         }

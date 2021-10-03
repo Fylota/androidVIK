@@ -5,8 +5,9 @@
     <string name="btn_about">Infó</string>
     <string name="toast_highscore">Eredmények</string>
     <string name="txt_about">Made by Ágota</string>
-
     <string name="title_activity_about">Az alkalmazásról</string>
     <string name="title_activity_game">Játék</string>
-
+    <string name="toast_end_draw">"Döntetlen!"</string>
+    <string name="toast_end_circle">"O nyert!"</string>
+    <string name="toast_end_cross">"X nyert!"</string>
 </resources>
